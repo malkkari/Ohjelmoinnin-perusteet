@@ -1,0 +1,89 @@
+/*******************
+
+tekijä Maliniemi Teemu
+
+Harjoitus 11 (Palautus vko 43)
+Muuta tehtävän 9 laskin-ohjelmaa niin, etta valikko nayttaa
+seuraavalta:
+
+VALIKKO
+0. Lopetus
+1. Summa
+2. Erotus
+3. Tulo
+4. Osamaara
+5. Jakojaannos
+6. Syota uudet luvut laskemista varten
+
+Laskimella on siis mahdollista käsitellä
+useita lukupareja käyttäjän toiveiden
+mukaisesti. Mita tapahtuu, jos luku2 on 0?
+HUOM! goto -lauseen käyttä on KIELLETTY!!!!
+
+pvm: 12.10.2016
+
+**************************/
+
+#include <iostream>
+using namespace std;
+
+float main()
+{
+	int l1;
+	int l2;
+	int valikko;
+	float tulos;
+
+	cout << "\nAnna kaksi lukua ";
+	
+	for (;;)
+	{
+
+		cin >> l1 >> l2;
+
+		cout << "\nVALIKKO";
+		cout << "\n0. Lopetus";
+		cout << "\n1. Summa";
+		cout << "\n2. Erotus";
+		cout << "\n3. Tulo";
+		cout << "\n4. Osamaara";
+		cout << "\n5. Jakojaannos \n";
+		cout << "\n6. Syötä uudet luvut";
+
+		cin >> valikko;
+		if (valikko == 0)
+		{
+			exit(0);
+		}
+		if (valikko == 1)
+		{
+			tulos = l1 + l2;
+			cout << "\n" << tulos;
+		}
+		if (valikko == 2)
+		{
+			tulos = l1 - l2;
+			cout << "\n" << tulos;
+		}
+		if (valikko == 3)
+		{
+			tulos = l1 * l2;
+			cout << "\n" << tulos;
+		}
+		if (valikko == 4)
+		{
+			tulos = l1 / l2;
+			cout << "\n" << tulos;
+		}
+		if (valikko == 5)
+		{
+			tulos = l1 % l2;
+			cout << "\n" << tulos;
+		}
+		if (valikko == 6)
+		{
+			continue;
+		}
+	}
+
+}
