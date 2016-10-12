@@ -1,0 +1,52 @@
+/******************************
+
+Tekijä Maliniemi Teemu
+
+
+Harjoitus 10 (Palautus vko 41)
+
+Tee ohjelma, joka laskee syötetyistä kokonaisluvuista sekä positiivisten
+että negatiivisten kokonaislukujen osuuden. Lukujen syöttä lopetetaan
+syöttämällä luku 0.
+
+Tulostus:
+Syötit kokonaislukuja seuraavasti:
+----------------------------------
+Negatiiviset 7 kpl 70.00%
+Positiiviset 3 kpl 30.00%
+Yhteensä 10 kpl 100.00%
+
+pvm: 05.10.2016
+
+**********************/
+#include <iostream>
+using namespace std;
+
+void main()
+{
+	cout.precision(4);
+	float neg = 0;
+	float pos = 0;
+	float syöte = 1;
+	float kaikki = 0;
+	float negpros = 0;
+	float pospros = 0;
+	
+
+	while (syöte != 0)
+	{
+		cout << "Syötä lukuja (keskeytä syöttämällä 0)" << endl;
+		cin >> syöte;
+
+		if (syöte > 0)
+		pos++;
+		if (syöte < 0)
+		neg++;
+	}
+	kaikki = neg + pos;
+	negpros = neg / kaikki * 100;
+	pospros = pos / kaikki * 100;
+	cout << "TULOS:" << endl;
+	cout << "Negatiiviset " << neg << "kpl " << negpros << "%" << endl;
+	cout << "Positiiviset " << pos << "kpl " << pospros << "%" << endl;
+}
