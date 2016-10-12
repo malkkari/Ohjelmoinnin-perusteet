@@ -59,31 +59,36 @@ float main()
 		{
 			tulos = l1 + l2;
 			cout << "\n" << tulos;
+			return 0;
 		}
 		if (valikko == 2)
 		{
 			tulos = l1 - l2;
 			cout << "\n" << tulos;
+			return 0;
 		}
 		if (valikko == 3)
 		{
 			tulos = l1 * l2;
 			cout << "\n" << tulos;
+			return 0;
 		}
 		if (valikko == 4)
 		{
 			tulos = l1 / l2;
 			cout << "\n" << tulos;
+			return 0;
 		}
 		if (valikko == 5)
 		{
 			tulos = l1 % l2;
 			cout << "\n" << tulos;
+			return 0;
 		}
 		if (valikko == 6)
 		{
 			continue;
 		}
 	}
-
+	return 0;
 }
