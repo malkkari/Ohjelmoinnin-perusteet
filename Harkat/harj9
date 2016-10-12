@@ -1,0 +1,72 @@
+/*******************
+
+tekijä Maliniemi Teemu
+
+Harjoitus 9 (Palautus vko 41)
+Tee ohjelma, joka toimii laskimena.
+Käyttäjältä kysytään kaksi kokonaislukua,
+jonka jälkeen ohjelma antaa valikon
+laskutoimituksista.Valikko nayttaa
+seuraavalta :
+
+VALIKKO
+1. Summa
+2. Erotus
+3. Tulo
+4. Osamaara
+5. Jakojaannos
+
+Lopuksi ohjelma tulostaa valitun tuloksen naytölle.
+
+pvm: 28.9.2016
+
+**************************/
+
+#include <iostream>
+using namespace std;
+
+float main()
+{
+	int l1;
+	int l2;
+	int valikko;
+	float tulos;
+
+	cout << "\nAnna kaksi lukua ";
+	cin >> l1 >> l2;
+
+	cout << "\nVALIKKO";
+	cout << "\n1. Summa";
+	cout << "\n2. Erotus";
+	cout << "\n3. Tulo";
+	cout << "\n4. Osamaara";
+	cout << "\n5. Jakojaannos \n";
+	
+	cin >> valikko;
+
+	if (valikko == 1)
+	{
+		tulos = l1 + l2;
+		cout << "\n" << tulos;
+	}
+	if (valikko == 2)
+	{
+		tulos = l1 - l2;
+		cout << "\n" << tulos;
+	}
+	if (valikko == 3)
+	{
+		tulos = l1 * l2;
+		cout << "\n" << tulos;
+	}
+	if (valikko == 4)
+	{
+		tulos = l1 / l2;
+		cout << "\n" << tulos;
+	}
+	if (valikko == 5)
+	{
+		tulos = l1 % l2;
+		cout << "\n" << tulos;
+	}
+}
