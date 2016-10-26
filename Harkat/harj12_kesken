@@ -42,9 +42,9 @@ int main()
 	cin >> luku;
 	while (rivinro <= luku)
 	{
-		for (nro = 0; nro <= rivinro; nro++);
+		for (nro = 0; nro < rivinro; nro++)
 		{
-			cout << rivinro << nro;
+			cout << rivinro;
 		}
 		cout << "\n";
 		rivinro++;
