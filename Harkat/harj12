@@ -36,10 +36,12 @@ int main()
 	char etu[30];
 	char suku[30];
 
-	cout << "\nSyötä etunimi ja sukunimi" << endl;
+	cout << "\nSyötä etunimi" << endl;
 
 	cin.get(etu, 30);
 	cin.get();
+
+	cout << "\nSyötä sukunimi" << endl;
 
 	cin.get(suku, 30);
 	cin.get();
