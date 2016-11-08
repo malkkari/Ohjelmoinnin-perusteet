@@ -1,52 +1,56 @@
-/**************************************
+/*****************************
 
-Harjoitus 12 (Palautus vko 43)
+Tekijä Maliniemi Teemu
 
-Tee ohjelma, joka kysyy käyttäjältä kokonaisluvun väliltä 1-9 ja
-tulostaa vastauksen perusteella seuraavan kuvion (jos vastaus on 6):
-
-1
-22
-333
-4444
-55555
-666666
-
-Jokainen numero tulee tulostaa toistorakenten avulla erikseen lauseella:
-cout << rivinro;
-
-PVM 26.10.2016
+Harjoitus 13 (Palautus vko 43)
+Tee ohjelma, joka kysyy etunimesi ja sukunimesi.Ohjelma
+yhdistää nimet yhdeksi merkkijonoksi ja tulostaa ne
+lopuksi naytölle.
 
 
-for (int i = 0; i <= 2 ; i++)
-{
-	for (int j= i+1 ; j <= 3 ; j++)
-	{
-	cout << i << j << endl;
-	}
-}
-return 0;
+a) Kayta cstring - kirjastoa(C:n merkkitaulukot)
+tehdäksesi merkkijonojen yhdistämisen
+b) Kayta string - kirjastoa(C++:n merkkijonot)
+tehdäksesi merkkijonojen yhdistämisen  TEE, JOS ON AIKAA
 
-**************************/
+Esimerkki
+Anna etunimi : Aku
+Anna sukunimi : Ankka
+Nimesi oli : Aku Ankka
+
+PVM: 8.11.2016
+
+****************************/
 
 #include <iostream>
 using namespace std;
+#include <cstring>
+union nimi
+{
+	char etu[15];
+	char suku[30];
 
+};
 int main()
 {
-	int luku = 0;
-	int rivinro = 1;
-	int nro = 0;
+	char etu[30];
+	char suku[30];
 
-	cout << "Anna luku valilta 1-9 " << endl;
-	cin >> luku;
-	while (rivinro <= luku)
-	{
-		for (nro = 0; nro < rivinro; nro++)
-		{
-			cout << rivinro;
-		}
-		cout << "\n";
-		rivinro++;
-	}
+	cout << "\nSyötä etunimi ja sukunimi" << endl;
+
+	cin.get(etu, 30);
+	cin.get();
+
+	cin.get(suku, 30);
+	cin.get();
+
+	strncat_s(etu, " ", 1);
+	strncat_s(etu, suku, 10);
+	cout << "nimesi on " << etu << endl;
+
+
+
+
+
+	return 0;
 }
