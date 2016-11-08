@@ -25,33 +25,25 @@ PVM: 8.11.2016
 #include <iostream>
 using namespace std;
 #include <cstring>
-union nimi
-{
-	char etu[15];
-	char suku[30];
 
-};
 int main()
 {
-	char etu[30];
-	char suku[30];
+	char etu[50];
+	char suku[50];
 
 	cout << "\nSyötä etunimi" << endl;
 
-	cin.get(etu, 30);
+	cin.get(etu, 50);
 	cin.get();
 
 	cout << "\nSyötä sukunimi" << endl;
 
-	cin.get(suku, 30);
+	cin.get(suku, 50);
 	cin.get();
 
 	strncat_s(etu, " ", 1);
-	strncat_s(etu, suku, 10);
+	strncat_s(etu, suku, 50);
 	cout << "nimesi on " << etu << endl;
-
-
-
 
 
 	return 0;
