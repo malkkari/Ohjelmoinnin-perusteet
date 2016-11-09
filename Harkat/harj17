@@ -1,0 +1,171 @@
+/**********************
+
+PVM 9.11.2016
+Tekijä Maliniemi Teemu
+
+Harjoitus 17 (Palautus vko 46)
+Muokkaa edellistä ohjelmaa siten, että edellä määriteltyä tietuetyyppiä
+käytetään myäs kahden muun "koululaisen" tietojen tallentamiseen.
+Näiden kahden muun koululaisen tiedot alustetaan ao. muuttujien
+määrittelyn yhteydessä. Ainoastaan yhden koululaisen tiedot kysytään
+käyttäjältä edellisen tehtävän tapaan.
+
+Tulosta kolmen koululaisen tiedot koulumatkan mukaisessa
+suuruusjärjestyksessä (pienimmästä suurimpaan) näytälle
+************************/
+
+#include <iostream>
+using namespace std;
+
+struct tiedot {
+	char etu[15];
+	char suku[30];
+	float koulu;
+	char osoite[40];
+	char posti[10];
+	int kenka;
+};
+
+int main()
+{
+	tiedot tietue;
+	tiedot tietue1 = { "matti", "meikalainen" , 4567, "dankstreet 46" , "78500", 40 };
+	tiedot tietue2 = { "jaakko", "trump" , 3000, "memestreet 46" , "36500", 39 };
+
+
+	cout << "\nAnna etunimi ";
+	cin.get(tietue.etu, 15);
+	cin.get();
+
+	cout << "\nAnna sukunimi ";
+	cin.get(tietue.suku, 30);
+	cin.get();
+
+	cout << "\nAnna kengännumero ";
+	cin >> tietue.kenka;
+
+	cout << "\nAnna koulumatkan pituus metreinä ";
+	cin >> tietue.koulu;
+
+	cout << "\nAnna osoitteesi ";
+	cin.get();
+	cin.get(tietue.osoite, 30);
+	cin.get();
+
+	cout << "\nAnna postinumero ";
+	cin >> tietue.posti;
+
+	if (tietue.koulu < tietue1.koulu)
+	{
+		if (tietue.koulu < tietue2.koulu)
+		{
+			if (tietue1.koulu < tietue2.koulu)
+			{
+				cout << tietue.suku << " " << tietue.etu << endl
+					<< tietue.osoite << endl
+					<< tietue.posti << endl
+					<< tietue.kenka << " " << tietue.koulu << "m" << endl
+
+					<< tietue1.suku << " " << tietue1.etu << endl
+					<< tietue1.osoite << endl
+					<< tietue1.posti << endl
+					<< tietue1.kenka << " " << tietue1.koulu << "m" << endl
+
+					<< tietue2.suku << " " << tietue2.etu << endl
+					<< tietue2.osoite << endl
+					<< tietue2.posti << endl
+					<< tietue2.kenka << " " << tietue2.koulu << "m" << endl;
+			}
+			else
+			{
+				cout << tietue.suku << " " << tietue.etu << endl;
+				cout << tietue.osoite << endl;
+				cout << tietue.posti << endl;
+				cout << tietue.kenka << " " << tietue.koulu << "m" << endl
+
+					<< tietue2.suku << " " << tietue2.etu << endl;
+				cout << tietue2.osoite << endl;
+				cout << tietue2.posti << endl;
+				cout << tietue2.kenka << " " << tietue2.koulu << "m" << endl
+
+					<< tietue1.suku << " " << tietue1.etu << endl;
+				cout << tietue1.osoite << endl;
+				cout << tietue1.posti << endl;
+				cout << tietue1.kenka << " " << tietue1.koulu << "m" << endl;
+			}
+		}
+		else
+		{
+			cout << tietue2.suku << " " << tietue2.etu << endl;
+			cout << tietue2.osoite << endl;
+			cout << tietue2.posti << endl;
+			cout << tietue2.kenka << " " << tietue2.koulu << "m" << endl
+
+				<< tietue.suku << " " << tietue.etu << endl;
+			cout << tietue.osoite << endl;
+			cout << tietue.posti << endl;
+			cout << tietue.kenka << " " << tietue.koulu << "m"
+
+				<< tietue1.suku << " " << tietue1.etu << endl;
+			cout << tietue1.osoite << endl;
+			cout << tietue1.posti << endl;
+			cout << tietue1.kenka << " " << tietue1.koulu << "m" << endl;
+		}
+	}
+
+	else if (tietue1.koulu < tietue2.koulu)
+	{
+		if (tietue.koulu < tietue2.koulu)
+		{
+			cout << tietue1.suku << " " << tietue1.etu << endl;
+			cout << tietue1.osoite << endl;
+			cout << tietue1.posti << endl;
+			cout << tietue1.kenka << " " << tietue1.koulu << "m" << endl
+
+				<< tietue.suku << " " << tietue.etu << endl;
+			cout << tietue.osoite << endl;
+			cout << tietue.posti << endl;
+			cout << tietue.kenka << " " << tietue.koulu << "m" 
+				
+				<< tietue2.suku << " " << tietue2.etu << endl;
+			cout << tietue2.osoite << endl;
+			cout << tietue2.posti << endl;
+			cout << tietue2.kenka << " " << tietue2.koulu << "m" << endl;
+		}
+		else
+		{
+			cout << tietue1.suku << " " << tietue1.etu << endl;
+			cout << tietue1.osoite << endl;
+			cout << tietue1.posti << endl;
+			cout << tietue1.kenka << " " << tietue1.koulu << "m" << endl
+				
+				<< tietue2.suku << " " << tietue2.etu << endl;
+			cout << tietue2.osoite << endl;
+			cout << tietue2.posti << endl;
+			cout << tietue2.kenka << " " << tietue2.koulu << "m" << endl
+				
+				<< tietue.suku << " " << tietue.etu << endl;
+			cout << tietue.osoite << endl;
+			cout << tietue.posti << endl;
+			cout << tietue.kenka << " " << tietue.koulu << "m";
+		}
+	}
+	else
+	{
+		cout << tietue2.suku << " " << tietue2.etu << endl;
+		cout << tietue2.osoite << endl;
+		cout << tietue2.posti << endl;
+		cout << tietue2.kenka << " " << tietue2.koulu << "m" << endl
+			
+			<< tietue1.suku << " " << tietue1.etu << endl;
+		cout << tietue1.osoite << endl;
+		cout << tietue1.posti << endl;
+		cout << tietue1.kenka << " " << tietue1.koulu << "m" << endl
+			
+			<< tietue.suku << " " << tietue.etu << endl;
+		cout << tietue.osoite << endl;
+		cout << tietue.posti << endl;
+		cout << tietue.kenka << " " << tietue.koulu << "m";
+	}
+
+}
