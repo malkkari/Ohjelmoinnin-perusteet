@@ -1,0 +1,65 @@
+/*****************************
+
+Tekijä Maliniemi Teemu
+
+Harjoitus 14 (Palautus vko 45)
+
+TäSSä TEHTÄVÄSSÄ ON KÄYTETTÄVÄ C - kielen merkkitaulukoita!Taulukon määrittely on siis muotoa
+
+char mjono[xx];
+
+Tee ohjelma, joka kysyy käyttäjältä 17 merkkiä
+pitkän merkkijonon(ei välilyäntejä).
+a) Ohjelma tulostaa merkkijonon käänteisessä järjestyksessä näytälle
+(tulostus tyyppiä "cout << mjono1[4];" jne)
+b) Ohjelma kääntää annetun merkkijonon toiseen
+merkkijonoon ja tulostaa sen näytälle
+(tulostus tyyppiä "cout << mjono2;")
+c) merkkijono voi olla kuinka pitkä
+tahansa(max 100 kirjainta).
+Syätetyn merkkijonon pituutta ei saa
+laskea millään kirjastofunktiolla
+(esim.lenght tms.) Ohjelma
+tutkii onko annettu merkkijono
+palindromi ja ilmoittaa sen käyttäjälle.
+Välilyännit jonossa ovat sallittuja.
+
+Käyttäjä syöttää jonon : ABC_Kissa_kavelee
+ohjelma tulostaa : eelevak_assiK_CBA
+
+PVM 9.11.2016
+
+*********************************/
+
+#include <iostream>
+using namespace std;
+
+void main()
+{
+	char jono1[100 + 1]; //alkuperäinen 
+	char jono2[100 + 1]; //käännetty
+	int pituus = 0; //merkkijonon pituus
+
+	cout << "Anna max 100 merkkia pitka merkkijono: ";
+	cin.getline(jono1, 101);
+	while (jono1[pituus] != '\0')
+	{
+		pituus++;
+	}
+
+	cout << " jono1 on " << jono1 << endl;
+	cout << " jono1 pituus " << pituus << endl;
+
+	for (int i = 0, j = pituus - 1; j >= 0; i++, j--)
+	{
+		jono2[i] = jono1[j];
+	}
+	jono2[pituus] = '\0';
+
+	cout << "Jono2 on " << jono2 << endl;
+	if (strcmp(jono1, jono2) == 0)
+		cout << "Merkkijono on Palindromi";
+	else
+		cout << "Merkkijono ei ole Palindromi";
+
+}
