@@ -1,0 +1,75 @@
+/******************************************
+
+Tekijä Maliniemi Teemu
+PVM 16.11.2016
+
+Harjoitus 19 (Palautus vko 47)
+Tee ohjelma, joka toimii auton nopeusmittarina.
+Periaate on seuraava : Näppäimistä toimii
+nopeusanturina ja näyttö mittarin näyttänä.
+Nopeusmittari laskee viiden viimeisen nopeuden
+keskiarvon ja tulostaa sen nykyisenä nopeutena
+näytälle.Negatiivinen nopeus lopettaa ohjelman.
+Toiminta on siis seuraava :
+Ohjelman kaynnistyksessa mittari näyttää nolla
+0
+0
+0
+0
+0 (alkutila)nopeus = 0 km / h
+Anna nopeus : 10
+= > 2 km / h
+Anna nopeus : 20
+= > 6 km / h
+Anna nopeus : 30
+= > 12 km / h
+Anna nopeus : 40
+= > 20 km / h
+Anna nopeus : 50
+= > 30 km / h
+Anna nopeus : 50
+= > 38 km / h
+Anna nopeus : 50
+= > 44 km / h
+Anna nopeus : 50
+= > 48 km / h
+Anna nopeus : 50
+= > 50 km / h
+Anna nopeus : 50
+= > 50 km / h
+Anna nopeus : -5
+= > loppu
+
+Käyttäjän syöte ohjelmalle lihavoitu ja kallistettu.
+
+Toteuta kayttaen taulukkoa.
+
+*********************************************/
+
+
+
+#include <iostream>
+using namespace std;
+const int MAX = 5; //nopeuksien maksimimäärä
+
+int main()
+{
+	int v[MAX] = { 0 }; //nollattu nopeustaulukko
+	int *os = &v[0]; //luodaan osotin ja laitetaan se osoittamaan taulukon alkua
+				 
+	for (int i=0;true;i++)
+	{
+		if (i == 5)
+			i = 0;
+		cout << "\nAnna nopeus: " << endl;
+		cin >> v[i];
+		if (v[i] < 0)
+			break;
+		cout << (os[0] + os[1] + os[2] + os[3] + os[4]) / 5 << endl;
+	}
+
+	//cout << "\nAnna nopeus: " << endl;
+	//cin >> v[1];
+	//cout << (v[0] + v[1] + v[2] + v[3] + v[4]) / 5 << endl;
+
+}
