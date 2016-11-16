@@ -1,0 +1,55 @@
+/***********************************
+
+Tekijä Maliniemi Teemu
+
+Harjoitus 21 (Palautus vko 48)
+Muunna harjoitus 11 niin, etta käytät seuraavia aliohjelmia:
+
+int KysyValinta(void);
+
+-> KysyValinta paluttaa käyttäjän antaman valintanumeron (0-6)
+
+double Summa(float luku1, int luku2);
+
+-> Summa laskee yhteen annetut tiedot ja palauttaa summan pääohjelmaan
+****************************/
+
+#include <iostream>
+using namespace std;
+int KysyValinta(void);
+double Summa(float luku1, int luku2);
+
+int main()
+{
+	int valinta;
+	int summa;
+	int luku1, luku2;
+	cout << "\nAnna kaksi lukua: ";
+	cin >> luku1 >> luku2;
+	valinta = KysyValinta(); //kutsutaan aliohjelmaa
+	switch(valinta)
+	{
+		case 0:
+			break;
+		case 1:
+			cout << "Summa on " << Summa(luku1,luku2) << endl;
+
+	}
+}
+
+double Summa(float luku1, int luku2)
+{
+	return (luku1 + luku2);
+}
+
+int KysyValinta(void)
+{
+	int valinta;
+
+	cout << "\nVALIKKO" << endl;
+	cout << "0. Lopeta" << endl;
+	cout << "1. Summa" << endl;
+	cout << "anna valintasi: ";
+	cin >> valinta;
+	return valinta;
+}
